@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doç. Dr. Fatih Karaaslan | Ağız ve Diş Sağlığı Polikliniği – Uşak</title>
+<meta name="description" content="Doç. Dr. Fatih Karaaslan Ağız ve Diş Sağlığı Polikliniği – Uşak. Ağız ve diş sağlığı, periodontoloji ve diş eti tedavileri hakkında bilgi ve randevu.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN SYSTEM
+============================================================ */
+:root{
+  --navy-900:#0B1626;
+  --navy-800:#101E33;
+  --navy-700:#16263F;
+  --navy-600:#1D3151;
+  --muted-blue:#8FA3BC;
+  --muted-blue-soft:#B8C6D6;
+  --gold:#D9AC4E;
+  --gold-deep:#9C7524;
+  --off-white:#F7F6F2;
+  --warm-white:#FBFAF7;
+  --gray-100:#F0EFEA;
+  --gray-200:#E4E2DC;
+  --gray-400:#A9A7A0;
+  --charcoal:#1C1F24;
+  --charcoal-soft:#3B4048;
+  --wa-green:#1FA855;
+  --wa-green-dark:#178A45;
+
+  --fs-hero:clamp(2.6rem, 6.2vw, 5.2rem);
+  --fs-h2:clamp(1.9rem, 3.6vw, 3rem);
+  --fs-body:clamp(1rem, 1.1vw, 1.075rem);
+
+  --section-pad:clamp(4.5rem, 9vw, 8rem);
+  --container:1200px;
+  --container-wide:1360px;
+
+  --radius:10px;
+  --radius-sm:8px;
+  --transition:0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --header-h:72px;
+
+  --map-link:url("https://www.google.com/maps/search/?api=1&query=38.665167,29.402139");
+}
+
+/* ============================================================
+   RESET & BASE
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  background:var(--navy-900);
+  overscroll-behavior:none;
+}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:var(--fs-body);
+  line-height:1.7;
+  color:var(--charcoal);
+  background:var(--warm-white);
+  overflow-x:hidden;
+  overscroll-behavior-y:none;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;line-height:1.15;color:var(--charcoal);letter-spacing:-0.02em}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer;border:none;background:none}
+:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;border-radius:2px}
+
+.container{width:min(100% - 3rem, var(--container));margin-inline:auto}
+.container-wide{width:min(100% - 3rem, var(--container-wide));margin-inline:auto}
+
+.section-label{
+  display:inline-flex;align-items:center;gap:.65rem;
+  font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);
+  margin-bottom:1.25rem;
+}
+.section-label::before{content:"";width:2rem;height:1px;background:var(--gold-deep);opacity:.6}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:'Manrope',sans-serif;font-weight:600;font-size:.95rem;
+  padding:.85rem 1.6rem;border-radius:var(--radius-sm);
+  transition:transform var(--transition), background var(--transition), box-shadow var(--transition), border-color var(--transition), color var(--transition);
+  white-space:nowrap;
+}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+.btn-wa{background:var(--wa-green);color:#fff}
+.btn-wa:hover{background:var(--wa-green-dark);transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(31,168,85,.45)}
+.btn-ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+.btn-ig{border:1px solid rgba(28,31,36,.2);color:var(--charcoal)}
+.btn-ig:hover{background:var(--navy-900);color:var(--gold);border-color:var(--navy-900);transform:translateY(-2px)}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:var(--header-h);
+  display:flex;align-items:center;
+  background:var(--navy-900);
+  box-shadow:0 1px 0 rgba(255,255,255,.06);
+  transition:background .3s ease, box-shadow .3s ease;
+}
+.header.scrolled{
+  background:rgba(247,246,242,.88);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+  box-shadow:0 1px 0 rgba(28,31,36,.08);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:2rem;width:100%}
+
+.logo{display:flex;align-items:center;min-width:0}
+.logo img{height:46px;width:auto}
+.logo-text{
+  display:none;font-family:'Manrope',sans-serif;font-weight:800;
+  font-size:1.05rem;line-height:1.15;color:var(--off-white);
+  letter-spacing:-0.01em;
+  transition:color .3s ease;
+}
+.logo-text small{
+  display:block;font-weight:500;font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted-blue-soft);
+  white-space:nowrap;transition:color .3s ease;
+}
+.no-logo .logo-text{display:block}
+
+.header:not(.scrolled) .nav-links a{color:rgba(247,246,242,.85)}
+.header:not(.scrolled) .nav-links a:hover{color:var(--gold)}
+.header:not(.scrolled) .nav-links a::after{background:var(--gold)}
+.header:not(.scrolled) .icon-link{color:rgba(247,246,242,.85)}
+.header:not(.scrolled) .icon-link:hover{color:var(--gold);background:rgba(255,255,255,.1)}
+.header:not(.scrolled) .burger{color:var(--off-white)}
+.header.scrolled .logo-text{color:var(--charcoal)}
+.header.scrolled .logo-text small{color:var(--charcoal-soft)}
+.header.scrolled .icon-link{color:var(--charcoal-soft)}
+.header.scrolled .icon-link:hover{color:var(--navy-800);background:rgba(28,31,36,.06)}
+.header.scrolled .burger{color:var(--charcoal)}
+
+.nav-links{display:flex;gap:2.2rem}
+.nav-links a{
+  font-family:'Manrope',sans-serif;font-weight:600;font-size:.9rem;
+  color:var(--charcoal-soft);position:relative;padding:.25rem 0;
+  transition:color var(--transition);
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:1.5px;
+  background:var(--gold-deep);transform:scaleX(0);transform-origin:right;
+  transition:transform var(--transition);
+}
+.nav-links a:hover{color:var(--navy-800)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+
+.nav-actions{display:flex;align-items:center;gap:1rem}
+.icon-link{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:50%;color:var(--charcoal-soft);
+  transition:color var(--transition), background var(--transition);
+}
+.icon-link:hover{color:var(--navy-800);background:rgba(28,31,36,.06)}
+.icon-link svg{width:19px;height:19px}
+.btn-nav{padding:.65rem 1.3rem;font-size:.88rem}
+
+.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:var(--charcoal)}
+.burger svg{width:24px;height:24px}
+
+/* Mobil menü */
+.mobile-menu{
+  position:fixed;
+  top:var(--header-h);left:0;right:0;
+  z-index:99;
+  display:none;
+  background:rgba(251,250,247,.98);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--gray-200);
+  padding:1rem 1.5rem 2rem;
+  animation:menuIn .3s ease;
+}
+.mobile-menu.open{display:block}
+@keyframes menuIn{
+  from{opacity:0;transform:translateY(-12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.mobile-menu a.m-link{
+  display:block;padding:.9rem 0;font-family:'Manrope',sans-serif;
+  font-weight:600;font-size:1.1rem;color:var(--charcoal);
+  border-bottom:1px solid var(--gray-100);
+}
+.mobile-menu .btn{margin-top:1.5rem;width:100%;justify-content:center}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;align-items:center;
+  overflow:hidden;isolation:isolate;
+  background:var(--navy-900);
+}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media video{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 35%;
+  filter:contrast(.92) saturate(.9);
+  transform:translateZ(0);
+  animation:heroZoom 40s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes heroZoom{from{transform:scale(1) translateZ(0)}to{transform:scale(1.05) translateZ(0)}}
+.hero-media::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(120% 90% at 50% 40%, transparent 30%, rgba(11,22,38,.55) 100%),
+    linear-gradient(rgba(11,22,38,.62), rgba(11,22,38,.62));
+}
+.hero-media::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:28%;z-index:1;
+  background:linear-gradient(transparent, rgba(11,22,38,.85));
+}
+.hero::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:130px;z-index:1;
+  background:linear-gradient(rgba(11,22,38,.5), transparent);
+  pointer-events:none;
+}
+
+.hero-inner{
+  position:relative;z-index:2;
+  padding:calc(var(--header-h) + 4rem) 0 6rem;
+  max-width:760px;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1.75rem;
+}
+.hero-eyebrow::before{content:"";width:2.2rem;height:1px;background:var(--gold);opacity:.8}
+.hero h1{
+  color:var(--off-white);
+  font-size:var(--fs-hero);font-weight:800;
+  margin-bottom:1.5rem;
+}
+.hero h1 .accent{color:var(--gold);font-weight:700}
+.hero-sub{
+  color:rgba(247,246,242,.78);
+  max-width:34rem;font-size:1.05rem;line-height:1.75;
+  margin-bottom:2.5rem;
+}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-meta{
+  display:flex;gap:2rem;flex-wrap:wrap;margin-top:3.5rem;
+  color:rgba(247,246,242,.6);font-size:.85rem;
+}
+.hero-meta span{display:inline-flex;align-items:center;gap:.55rem}
+.hero-meta svg{width:16px;height:16px;opacity:.8}
+.hero-poster{
+  position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 55%, var(--navy-600) 100%);
+}
+
+/* ============================================================
+   TEDAVİ SÜRECİMİZ
+============================================================ */
+.process{background:var(--warm-white);padding:var(--section-pad) 0}
+.process-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:2rem;counter-reset:step;
+}
+.process-step{position:relative;padding-top:1.5rem}
+.process-step::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:var(--gray-200);
+}
+.process-step::after{
+  content:"";position:absolute;top:-1px;left:0;width:2.5rem;height:3px;
+  background:var(--gold-deep);
+}
+.process-num{
+  font-family:'Manrope',sans-serif;font-weight:800;font-size:2rem;
+  color:var(--gray-200);line-height:1;margin-bottom:1rem;
+}
+.process-step h3{font-size:1.05rem;font-weight:700;margin-bottom:.4rem}
+.process-step p{font-size:.9rem;color:var(--charcoal-soft)}
+
+/* ============================================================
+   TEDAVİLER
+============================================================ */
+.treatments{background:var(--off-white);padding:var(--section-pad) 0}
+.section-head{max-width:640px;margin-bottom:3.5rem}
+.section-head h2{font-size:var(--fs-h2);font-weight:800;margin-bottom:1rem}
+.section-head p{color:var(--charcoal-soft)}
+
+.treat-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--gray-200);border-left:1px solid var(--gray-200);
+}
+.treat-card{
+  padding:2.2rem 1.9rem;
+  border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);
+  transition:background var(--transition), transform var(--transition);
+  display:flex;flex-direction:column;gap:.7rem;min-height:190px;
+  text-align:left;width:100%;
+}
+.treat-card:hover{background:var(--warm-white);transform:translateY(-3px)}
+.treat-card h3{font-size:1.05rem;font-weight:700;line-height:1.3}
+.treat-card p{font-size:.88rem;color:var(--charcoal-soft);line-height:1.6}
+.treat-card .more{
+  margin-top:auto;display:inline-flex;align-items:center;gap:.35rem;
+  font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:700;
+  color:var(--gold-deep);letter-spacing:.06em;
+}
+.treat-card .more svg{width:14px;height:14px;transition:transform var(--transition)}
+.treat-card:hover .more svg{transform:translateX(3px)}
+
+/* ============================================================
+   TEDAVİ DETAY PENCERESİ
+============================================================ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(11,22,38,.6);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  padding:1.5rem;
+}
+.modal-overlay.open{display:flex;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{
+  background:var(--warm-white);border-radius:var(--radius);
+  max-width:640px;width:100%;
+  max-height:85vh;max-height:85dvh;
+  overflow-y:auto;
+  padding:clamp(2rem,4vw,3rem);
+  position:relative;
+  animation:modalIn .35s cubic-bezier(.22,1,.36,1);
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.modal-close{
+  position:absolute;top:1.1rem;right:1.1rem;
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--charcoal-soft);background:var(--gray-100);
+  transition:background var(--transition), color var(--transition);
+}
+.modal-close:hover{background:var(--navy-900);color:var(--gold)}
+.modal-close svg{width:18px;height:18px}
+.modal .section-label{margin-bottom:.75rem}
+.modal h3{font-size:1.5rem;font-weight:800;margin-bottom:1.25rem}
+.modal p{color:var(--charcoal-soft);margin-bottom:1rem;font-size:.97rem}
+.modal .modal-note{
+  margin-top:1.5rem;padding:1rem 1.25rem;
+  background:var(--gray-100);border-left:2px solid var(--gold-deep);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  font-size:.85rem;color:var(--charcoal-soft);
+}
+.modal .modal-actions{margin-top:1.75rem;display:flex;gap:.75rem;flex-wrap:wrap}
+body.modal-open{overflow:hidden}
+
+/* ============================================================
+   HEKİMLERİMİZ
+============================================================ */
+.team{background:var(--navy-900);color:var(--off-white);padding:var(--section-pad) 0;overflow:hidden}
+.team .section-head h2{color:var(--off-white)}
+.team .section-head p{color:var(--muted-blue)}
+.team .section-label{color:var(--gold)}
+.team .section-label::before{background:var(--gold)}
+.team-top{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:3rem}
+.carousel-nav{display:flex;gap:.6rem}
+.c-btn{
+  width:48px;height:48px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.2);color:var(--off-white);
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background var(--transition), border-color var(--transition), opacity var(--transition), color var(--transition);
+}
+.c-btn:hover:not(:disabled){background:rgba(217,172,78,.12);border-color:var(--gold);color:var(--gold)}
+.c-btn:disabled{opacity:.3;cursor:default}
+.c-btn svg{width:18px;height:18px}
+
+.carousel{
+  display:flex;gap:1.5rem;overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none;
+  cursor:grab;user-select:none;-webkit-user-select:none;
+  padding-bottom:.5rem;
+  margin-right:calc((100vw - min(100vw - 3rem, var(--container)))/-2);
+  padding-left:max(1.5rem, calc((100vw - min(100vw - 3rem, var(--container)))/2));
+  padding-right:1.5rem;
+}
+.carousel::-webkit-scrollbar{display:none}
+.carousel.dragging{cursor:grabbing;scroll-snap-type:none}
+.doc-card{
+  flex:0 0 clamp(280px, 26vw, 340px);
+  scroll-snap-align:start;
+}
+.doc-photo{
+  aspect-ratio:3/3.8;overflow:hidden;border-radius:var(--radius);
+  background:var(--navy-700);margin-bottom:1.25rem;
+}
+.doc-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;pointer-events:none}
+.doc-card h3{color:var(--off-white);font-size:1.15rem;font-weight:700;margin-bottom:.2rem}
+.doc-card .spec{color:var(--muted-blue);font-size:.9rem;margin-bottom:.8rem}
+.doc-card .view{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:600;color:var(--gold);
+}
+.doc-card .view svg{width:15px;height:15px;transition:transform var(--transition)}
+.doc-card:hover .view svg{transform:translateX(3px)}
+
+/* ============================================================
+   SSS
+============================================================ */
+.faq{background:var(--off-white);padding:var(--section-pad) 0}
+.faq-wrap{max-width:760px}
+.faq-item{border-bottom:1px solid var(--gray-200)}
+.faq-item:first-child{border-top:1px solid var(--gray-200)}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;padding:1.4rem .25rem;text-align:left;
+  font-family:'Manrope',sans-serif;font-weight:600;font-size:1.02rem;
+  color:var(--charcoal);transition:color var(--transition);
+}
+.faq-q:hover{color:var(--gold-deep)}
+.faq-q .chev{
+  flex-shrink:0;width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--gray-200);color:var(--charcoal-soft);
+  transition:transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+}
+.faq-q .chev svg{width:14px;height:14px}
+.faq-item.open .chev{
+  transform:rotate(180deg);
+  background:var(--navy-900);color:var(--gold);border-color:var(--navy-900);
+}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s cubic-bezier(.22,1,.36,1);
+}
+.faq-a p{
+  padding:0 3rem 1.5rem .25rem;
+  color:var(--charcoal-soft);font-size:.95rem;
+}
+
+/* ============================================================
+   INSTAGRAM
+============================================================ */
+.ig-sec{background:var(--warm-white);padding:calc(var(--section-pad) * .7) 0}
+.ig-card{
+  background:var(--navy-800);border-radius:calc(var(--radius) * 1.6);
+  padding:clamp(2.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:2.5rem;flex-wrap:wrap;position:relative;overflow:hidden;
+}
+.ig-card::before{
+  content:"";position:absolute;top:-90px;right:-90px;width:300px;height:300px;
+  border-radius:50%;border:1px solid rgba(217,172,78,.15);pointer-events:none;
+}
+.ig-copy{display:flex;align-items:center;gap:1.5rem}
+.ig-badge{
+  flex-shrink:0;width:56px;height:56px;border-radius:16px;
+  background:rgba(217,172,78,.1);border:1px solid rgba(217,172,78,.3);
+  display:flex;align-items:center;justify-content:center;color:var(--gold);
+  transition:background var(--transition), transform var(--transition), border-color var(--transition);
+}
+.ig-badge:hover{
+  background:rgba(217,172,78,.2);border-color:var(--gold);
+  transform:translateY(-3px);
+}
+.ig-badge svg{width:26px;height:26px}
+.ig-copy h2{color:var(--off-white);font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;margin-bottom:.2rem}
+.ig-copy .ig-handle{color:var(--gold);font-size:.92rem}
+.ig-copy p{color:var(--muted-blue);font-size:.92rem;margin-top:.5rem;max-width:26rem}
+
+/* ============================================================
+   CTA
+============================================================ */
+.cta{padding:var(--section-pad) 0;background:var(--warm-white)}
+.cta-panel{
+  background:var(--navy-800);border-radius:calc(var(--radius) * 1.6);
+  padding:clamp(3rem,6vw,5rem);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:2.5rem;flex-wrap:wrap;
+  position:relative;overflow:hidden;
+}
+.cta-panel::before{
+  content:"";position:absolute;top:-80px;right:-80px;width:320px;height:320px;
+  border-radius:50%;border:1px solid rgba(217,172,78,.15);pointer-events:none;
+}
+.cta-copy h2{color:var(--off-white);font-size:var(--fs-h2);font-weight:800;margin-bottom:.75rem}
+.cta-copy p{color:var(--muted-blue);max-width:28rem}
+
+/* ============================================================
+   CONTACT — gerçek harita embed'i
+============================================================ */
+.contact{padding:var(--section-pad) 0;background:var(--warm-white);border-top:1px solid var(--gray-200)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2.5rem,5vw,4.5rem)}
+.contact h2{font-size:var(--fs-h2);font-weight:800;margin-bottom:2rem}
+.c-block{padding:1.5rem 0;border-top:1px solid var(--gray-200)}
+.c-block:last-of-type{border-bottom:1px solid var(--gray-200)}
+.c-block .c-title{
+  font-family:'Manrope',sans-serif;font-size:.75rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gray-400);
+  margin-bottom:.5rem;
+}
+.c-block p, .c-block a{font-size:1rem;color:var(--charcoal);line-height:1.65}
+.c-block a.addr{transition:color var(--transition)}
+.c-block a.addr:hover{color:var(--gold-deep)}
+.c-block a.phone{
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:1.35rem;
+  transition:color var(--transition);
+}
+.c-block a.phone:hover{color:var(--gold-deep)}
+.hours-row{display:flex;justify-content:space-between;max-width:320px;font-size:.95rem}
+.hours-row span:last-child{color:var(--charcoal-soft)}
+.hours-row .closed{color:#B0483C;font-weight:500}
+
+/* Gerçek Google Haritası — koordinat sabit pinli */
+.map-box{
+  border-radius:var(--radius);overflow:hidden;
+  background:var(--gray-100);
+  min-height:420px;height:100%;
+  border:1px solid var(--gray-200);
+  position:relative;
+}
+.map-box iframe{
+  width:100%;height:100%;min-height:420px;
+  display:block;border:0;
+  filter:grayscale(.15) contrast(1.02);
+}
+/* Harita üzerinde mobil dokunma sorununu çözmeyen, tıklanabilir katman yok —
+   iframe kendi içinde etkileşimlidir */
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.footer{background:var(--navy-900);color:var(--muted-blue);padding:4.5rem 0 2rem}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.footer .logo img{height:52px}
+.footer .logo-text{color:var(--off-white)}
+.footer .logo-text small{color:var(--muted-blue)}
+.footer-desc{font-size:.9rem;max-width:24rem;margin-top:1.25rem;line-height:1.7}
+.footer h4{
+  color:var(--gold);font-size:.78rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.25rem;
+}
+.footer-links li{margin-bottom:.7rem;font-size:.92rem}
+.footer-links a{transition:color var(--transition)}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{
+  padding-top:2rem;display:flex;justify-content:space-between;
+  align-items:center;gap:1.5rem;flex-wrap:wrap;font-size:.83rem;
+}
+.footer-social{display:flex;gap:.5rem}
+.footer-social a{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.15);color:var(--muted-blue);
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:color var(--transition), border-color var(--transition);
+}
+.footer-social a:hover{color:var(--gold);border-color:rgba(217,172,78,.5)}
+.footer-social svg{width:17px;height:17px}
+
+/* ============================================================
+   MOBİL YAPIŞKAN RANDEVU ÇUBUĞU
+============================================================ */
+.mobile-bar{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;
+  background:rgba(251,250,247,.95);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-top:1px solid var(--gray-200);
+  padding:.65rem .9rem calc(.65rem + env(safe-area-inset-bottom, 0px));
+  gap:.75rem;
+}
+.mobile-bar a{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.8rem .5rem;border-radius:var(--radius-sm);
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:.9rem;
+}
+.mobile-bar a svg{width:17px;height:17px}
+.mobile-bar .bar-call{border:1px solid var(--gray-200);color:var(--charcoal)}
+.mobile-bar .bar-wa{background:var(--wa-green);color:#fff}
+
+/* ============================================================
+   REVEAL
+============================================================ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero-media video{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width:1023px){
+  .nav-links{display:none}
+  .icon-link.nav-ig{display:none}
+  .burger{display:inline-flex}
+  .process-grid{grid-template-columns:1fr 1fr;gap:2.5rem 2rem}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-media video{object-position:center 30%}
+}
+
+@media (max-width:767px){
+  :root{--header-h:64px}
+
+  .logo img{height:40px}
+  .logo-text{font-size:.92rem;line-height:1.1}
+  .logo-text small{font-size:.58rem;letter-spacing:.1em}
+
+  .btn-nav span{display:none}
+  .btn-nav{padding:.65rem .9rem}
+
+  .process{padding:calc(var(--section-pad) * .9) 0}
+  .process-grid{grid-template-columns:1fr;gap:1.75rem}
+
+  .treatments{padding:calc(var(--section-pad) * .8) 0}
+  .section-head{margin-bottom:2rem}
+  .treat-grid{grid-template-columns:1fr 1fr;border-left:none}
+  .treat-card{
+    padding:1.1rem 1rem;min-height:0;gap:.3rem;
+    border-left:1px solid var(--gray-200);
+  }
+  .treat-card p{display:none}
+  .treat-card h3{font-size:.92rem;line-height:1.35}
+  .treat-card .more{font-size:.72rem;margin-top:.25rem}
+
+  .faq-a p{padding-right:1rem}
+
+  .ig-card{flex-direction:column;align-items:flex-start}
+  .ig-copy{flex-direction:column;align-items:flex-start;gap:1rem}
+
+  .doc-card{flex-basis:78vw}
+  .cta-panel{flex-direction:column;align-items:flex-start}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .hero{min-height:88vh;min-height:88svh}
+  .hero-media video{object-position:center 25%}
+  .hero-inner{padding-bottom:4.5rem}
+
+  .mobile-bar{display:flex}
+  body{padding-bottom:calc(64px + env(safe-area-inset-bottom, 0px))}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<header class="header" id="header">
+  <div class="container-wide">
+    <nav class="nav" aria-label="Ana navigasyon">
+      <a href="#anasayfa" class="logo" aria-label="Doç. Dr. Fatih Karaaslan Ağız ve Diş Sağlığı Polikliniği">
+        <img src="assets/logo.png" alt="Doç. Dr. Fatih Karaaslan Ağız ve Diş Sağlığı Polikliniği logosu"
+             onerror="this.remove();document.body.classList.add('no-logo')">
+        <span class="logo-text">Doç. Dr. Fatih Karaaslan<small>Ağız ve Diş Sağlığı Polikliniği</small></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#anasayfa">Ana Sayfa</a></li>
+        <li><a href="#hakkimizda">Hakkımızda</a></li>
+        <li><a href="#tedaviler">Tedaviler</a></li>
+        <li><a href="#hekimlerimiz">Hekimlerimiz</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://www.instagram.com/doc.dr.fatihkaraaslan" target="_blank" rel="noopener" class="icon-link nav-ig" aria-label="Instagram sayfamız">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-wa btn-nav" aria-label="WhatsApp üzerinden randevu alın">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7a9.2 9.2 0 0 0 3.5 3.1c.5.2.9.3 1.2.4.5.2 1 .1 1.3.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+          <span>Randevu Al</span>
+        </a>
+        <button class="burger" id="burger" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#anasayfa" class="m-link">Ana Sayfa</a>
+  <a href="#hakkimizda" class="m-link">Hakkımızda</a>
+  <a href="#tedaviler" class="m-link">Tedaviler</a>
+  <a href="#hekimlerimiz" class="m-link">Hekimlerimiz</a>
+  <a href="#iletisim" class="m-link">İletişim</a>
+  <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-wa">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7a9.2 9.2 0 0 0 3.5 3.1c.5.2.9.3 1.2.4.5.2 1 .1 1.3.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+    WhatsApp ile Randevu Al
+  </a>
+</div>
+
+<main>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="anasayfa">
+  <div class="hero-media" aria-hidden="true">
+    <div class="hero-poster"></div>
+    <video autoplay muted loop playsinline preload="metadata" id="hero-video">
+      <source src="assets/hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Uşak · Ağız ve Diş Sağlığı Polikliniği</span>
+      <h1>Sağlıklı Bir Gülüş,<br><span class="accent">Uzman Dokunuşuyla.</span></h1>
+      <p class="hero-sub">Doç. Dr. Fatih Karaaslan Ağız ve Diş Sağlığı Polikliniği olarak ağız ve diş sağlığınız için güvenilir ve modern bir hasta deneyimi sunmayı hedefliyoruz.</p>
+      <div class="hero-cta">
+        <a href="#tedaviler" class="btn btn-ghost">Tedavileri Keşfet</a>
+      </div>
+      <div class="hero-meta">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg>
+          0505 354 34 64
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Pzt–Cum 09:00–19:00 · Cmt 09:00–15:30
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TEDAVİ SÜRECİMİZ
+============================================================ -->
+<section class="process" id="hakkimizda" aria-label="Tedavi sürecimiz">
+  <div class="container-wide">
+    <div class="section-head reveal" style="margin-bottom:2.5rem">
+      <span class="section-label">Süreç</span>
+      <h2>Tedavi Sürecimiz</h2>
+      <p>İlk iletişimden tedavinin tamamlanmasına kadar her adımda yanınızdayız.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <h3>İletişim</h3>
+        <p>WhatsApp veya telefon üzerinden bize ulaşın; size en uygun randevu saatini birlikte belirleyelim.</p>
+      </div>
+      <div class="process-step reveal reveal-d1">
+        <div class="process-num">02</div>
+        <h3>Değerlendirme</h3>
+        <p>Randevunuzda ağız ve diş sağlığınız detaylı olarak değerlendirilir ve tüm sorularınız yanıtlanır.</p>
+      </div>
+      <div class="process-step reveal reveal-d2">
+        <div class="process-num">03</div>
+        <h3>Kişiye Özel Plan</h3>
+        <p>İhtiyaçlarınıza göre hazırlanan tedavi planı size açıkça anlatılır; sürecin tamamını bilerek ilerlersiniz.</p>
+      </div>
+      <div class="process-step reveal reveal-d3">
+        <div class="process-num">04</div>
+        <h3>Tedavi ve Takip</h3>
+        <p>Tedaviniz plana uygun şekilde yürütülür; sağlıklı sonuçların korunması için düzenli kontrol önerilir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TEDAVİLER
+============================================================ -->
+<section class="treatments" id="tedaviler">
+  <div class="container-wide">
+    <div class="section-head reveal">
+      <span class="section-label">Tedaviler</span>
+      <h2>İhtiyacınıza Uygun Tedavi</h2>
+      <p>Ağız ve diş sağlığınız için ihtiyaçlarınıza göre değerlendirilen modern tedavi seçenekleri. Detaylar için bir tedaviye dokunun.</p>
+    </div>
+
+    <div class="treat-grid">
+      <button class="treat-card reveal" data-treatment="periodontoloji">
+        <h3>Periodontoloji</h3>
+        <p>Diş eti ve destek dokularının sağlığını hedefleyen uzmanlık alanı.</p>
+        <span class="more">Detaylı Bilgi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="treat-card reveal reveal-d1" data-treatment="dis-eti">
+        <h3>Diş Eti Tedavileri</h3>
+        <p>Diş eti sağlığının korunması ve tedavisine yönelik yaklaşımlar.</p>
+        <span class="more">Detaylı Bilgi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="treat-card reveal reveal-d2" data-treatment="implant">
+        <h3>Diş İmplantları</h3>
+        <p>Eksik dişlerin fonksiyon ve estetiğini tamamlayan tedavi seçeneği.</p>
+        <span class="more">Detaylı Bilgi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="treat-card reveal reveal-d3" data-treatment="estetik">
+        <h3>Estetik Diş Hekimliği</h3>
+        <p>Gülüşünüzü doğal görünümüyle desteklemeyi hedefleyen estetik yaklaşımlar.</p>
+        <span class="more">Detaylı Bilgi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="treat-card reveal" data-treatment="beyazlatma">
+        <h3>Diş Beyazlatma</h3>
+        <p>Dişlerin doğal rengini desteklemeye yönelik klinik uygulamalar.</p>
+        <span class="more">Detaylı Bilgi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="treat-card reveal reveal-d1" data-treatment="cerrahi">
+        <h3>Ağız ve Diş Cerrahisi</h3>
+        <p>Ağız ve diş sağlığı alanındaki cerrahi tedavi yaklaşımları.</p>
+        <span class="more">Detaylı Bilgi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="treat-card reveal reveal-d2" data-treatment="koruyucu">
+        <h3>Koruyucu Diş Hekimliği</h3>
+        <p>Diş sağlığının korunmasına yönelik önleyici bakım ve kontroller.</p>
+        <span class="more">Detaylı Bilgi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="treat-card reveal reveal-d3" data-treatment="diger">
+        <h3>Diğer Diş Tedavileri</h3>
+        <p>İhtiyacınıza göre değerlendirilen diğer tedavi seçenekleri.</p>
+        <span class="more">Detaylı Bilgi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HEKİMLERİMİZ
+============================================================ -->
+<section class="team" id="hekimlerimiz">
+  <div class="container-wide">
+    <div class="team-top reveal">
+      <div class="section-head" style="margin-bottom:0">
+        <span class="section-label">Hekimlerimiz</span>
+        <h2>Hekimlerimiz</h2>
+        <p>Kliniğimizin hekimlerini yakından tanıyın.</p>
+      </div>
+      <div class="carousel-nav">
+        <button class="c-btn" id="car-prev" aria-label="Önceki hekimi gör">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="c-btn" id="car-next" aria-label="Sonraki hekimi gör">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel reveal" id="carousel" aria-label="Hekimlerimiz listesi" tabindex="0">
+
+      <article class="doc-card">
+        <div class="doc-photo">
+          <img src="assets/doctor-karaaslan.jpg" alt="Doç. Dr. Fatih Karaaslan – Periodontoloji Uzmanı" loading="lazy" onerror="this.remove()">
+        </div>
+        <h3>Doç. Dr. Fatih Karaaslan</h3>
+        <p class="spec">Periodontoloji Uzmanı</p>
+        <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="view">
+          Randevu Al
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-photo">
+          <img src="assets/doctor-cosar.jpg" alt="Dt. Rana Coşar portresi" loading="lazy" onerror="this.remove()">
+        </div>
+        <h3>Dt. Rana Coşar</h3>
+        <p class="spec">Diş Hekimi</p>
+        <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="view">
+          Randevu Al
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-photo">
+          <img src="assets/doctor-sahin.jpg" alt="Dt. Kerime Şeyma Şahin portresi" loading="lazy" onerror="this.remove()">
+        </div>
+        <h3>Dt. Kerime Şeyma Şahin</h3>
+        <p class="spec">Diş Hekimi</p>
+        <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="view">
+          Randevu Al
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-photo">
+          <img src="assets/doctor-canbulat.jpg" alt="Dt. Kamile Canbulat portresi" loading="lazy" onerror="this.remove()">
+        </div>
+        <h3>Dt. Kamile Canbulat</h3>
+        <p class="spec">Diş Hekimi</p>
+        <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="view">
+          Randevu Al
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-photo">
+          <img src="assets/doctor-korucu.jpg" alt="Uzman Dt. Merve Korucu portresi" loading="lazy" onerror="this.remove()">
+        </div>
+        <h3>Uzman Dt. Merve Korucu</h3>
+        <p class="spec">Uzman Diş Hekimi</p>
+        <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="view">
+          Randevu Al
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SSS
+============================================================ -->
+<section class="faq" aria-label="Sıkça sorulan sorular">
+  <div class="container">
+    <div class="faq-wrap">
+      <div class="section-head reveal" style="margin-bottom:2.5rem">
+        <span class="section-label">S.S.S.</span>
+        <h2>Sıkça Sorulan Sorular</h2>
+        <p>Randevu ve tedavi süreciyle ilgili en çok merak edilenler.</p>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Randevu nasıl alabilirim?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>En hızlı yol WhatsApp'tır: 0505 354 34 64 numarasına mesaj göndererek ya da sitedeki "Randevu Al" butonlarını kullanarak randevu talebinde bulunabilirsiniz. Dilerseniz aynı numaradan telefonla da ulaşabilirsiniz. Çalışma saatlerimiz Pazartesi–Cuma 09:00–19:00, Cumartesi 09:00–15:30'dur.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          İlk muayene nasıl gerçekleşir?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>İlk randevunuzda ağız ve diş sağlığınız detaylı şekilde değerlendirilir. Mevcut durumunuz, ihtiyaçlarınız ve beklentileriniz dinlenir; ardından size özel bir tedavi planı önerilir. Planlanan tüm adımlar açıkça anlatılır, karar vermeden önce tüm sorularınız yanıtlanır.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Kliniğiniz nerede ve nasıl ulaşabilirim?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Cumhuriyet Mahallesi, Mehmet Topaç Bulvarı No: 147/A (Yücetepe Camii Karşısı), Merkez / Uşak adresindeyiz. Merkezi konumumuz sayesinde şehir merkezinden kolayca ulaşım sağlayabilirsiniz. İletişim bölümündeki adrese dokunarak haritalarda yol tarifi alabilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Hangi gün ve saatlerde hizmet veriyorsunuz?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Pazartesi'den Cuma'ya 09:00–19:00 saatleri arasında, Cumartesi günleri ise 09:00–15:30 saatlerinde hizmet veriyoruz. Pazar günleri kapalıyız.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Tedavi ücretleri hakkında bilgi alabilir miyim?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Tedavi ücretleri, ihtiyacınıza ve planlanan tedaviye göre kişiye özel belirlenir. Bu nedenle net bilgi için ilk muayene sonrasında hazırlanan tedavi planıyla birlikte ücretlendirme hakkında detaylı olarak bilgilendirilirsiniz. Sorularınız için bize WhatsApp üzerinden ulaşabilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Diş eti sağlığı için ne sıklıkla kontrol olmalıyım?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Diş eti hastalıkları çoğu zaman sinsi ilerler ve erken evrede belirgin şikayete yol açmayabilir. Genel öneri, yılda en az bir kez diş hekimi kontrolü ve ihtiyaca göre profesyonel değerlendirmedir. Diş etinizde kanama, kızarıklık veya çekilme fark ederseniz beklememeniz önerilir.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INSTAGRAM
+============================================================ -->
+<section class="ig-sec" aria-label="Instagram">
+  <div class="container">
+    <div class="ig-card reveal">
+      <div class="ig-copy">
+        <a href="https://www.instagram.com/doc.dr.fatihkaraaslan" target="_blank" rel="noopener" class="ig-badge" aria-label="Instagram sayfamızı aç">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <div>
+          <h2>Bizi Instagram'da Takip Edin</h2>
+          <span class="ig-handle">@doc.dr.fatihkaraaslan</span>
+          <p>Klinik güncellemeleri, ağız ve diş sağlığı ipuçları ve paylaşımlarımız için bizi Instagram'da takip edin.</p>
+        </div>
+      </div>
+      <a href="https://www.instagram.com/doc.dr.fatihkaraaslan" target="_blank" rel="noopener" class="btn btn-ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+        Profili Gör
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RANDEVU CTA
+============================================================ -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-panel reveal">
+      <div class="cta-copy">
+        <h2>Gülüşünüz İçin İlk Adımı Atın.</h2>
+        <p>Randevu ve detaylı bilgi için bizimle iletişime geçebilirsiniz.</p>
+      </div>
+      <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-wa" style="padding:1.1rem 2rem;font-size:1rem">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7a9.2 9.2 0 0 0 3.5 3.1c.5.2.9.3 1.2.4.5.2 1 .1 1.3.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+        Randevu Al
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     İLETİŞİM — gerçek harita embed'i (koordinat sabit)
+============================================================ -->
+<section class="contact" id="iletisim">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="section-label">İletişim</span>
+        <h2>Bize Ulaşın</h2>
+
+        <div class="c-block">
+          <p class="c-title">Adres</p>
+          <a class="addr" href="https://www.google.com/maps/search/?api=1&query=38.665167,29.402139" target="_blank" rel="noopener">
+            Cumhuriyet Mahallesi, Mehmet Topaç Bulvarı No: 147/A<br>(Yücetepe Camii Karşısı)<br>Merkez / Uşak
+          </a>
+        </div>
+        <div class="c-block">
+          <p class="c-title">Telefon</p>
+          <a class="phone" href="tel:+905053543464">0505 354 34 64</a>
+        </div>
+        <div class="c-block">
+          <p class="c-title">Çalışma Saatleri</p>
+          <div class="hours-row"><span>Pazartesi – Cuma</span><span>09:00 – 19:00</span></div>
+          <div class="hours-row"><span>Cumartesi</span><span>09:00 – 15:30</span></div>
+          <div class="hours-row"><span>Pazar</span><span class="closed">Kapalı</span></div>
+        </div>
+        <div class="c-block">
+          <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7a9.2 9.2 0 0 0 3.5 3.1c.5.2.9.3 1.2.4.5.2 1 .1 1.3.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+            WhatsApp ile Randevu Al
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d1">
+        <!-- Klinik konumu: 38.665167, 29.402139 — işletme profili onaylanınca
+             bu iframe resmî Google embed koduyla değiştirilebilir -->
+        <div class="map-box">
+          <iframe
+            src="https://maps.google.com/maps?q=38.665167,29.402139&hl=tr&z=17&t=m&output=embed"
+            width="100%" height="100%"
+            style="border:0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Klinik konumu — Mehmet Topaç Bulvarı No: 147/A, Merkez / Uşak">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <a href="#anasayfa" class="logo" aria-label="Ana sayfa">
+          <img src="assets/logo.png" alt="Klinik logosu" loading="lazy" onerror="this.remove()">
+          <span class="logo-text">Doç. Dr. Fatih Karaaslan<small>Ağız ve Diş Sağlığı Polikliniği</small></span>
+        </a>
+        <p class="footer-desc">Doç. Dr. Fatih Karaaslan, Uşak Ağız ve Diş Sağlığı Polikliniği'ndeki görevinin ardından kendi özel kliniğinde hasta kabul etmektedir. Ağız ve diş sağlığı alanında güvenilir ve modern bir hasta deneyimi sunmayı hedefliyoruz.</p>
+      </div>
+
+      <div>
+        <h4>İletişim</h4>
+        <ul class="footer-links">
+          <li>
+            <a href="https://www.google.com/maps/search/?api=1&query=38.665167,29.402139" target="_blank" rel="noopener">
+              Cumhuriyet Mahallesi, Mehmet Topaç Bulvarı No: 147/A<br>(Yücetepe Camii Karşısı)<br>Merkez / Uşak
+            </a>
+          </li>
+          <li><a href="tel:+905053543464">0505 354 34 64</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Çalışma Saatleri</h4>
+        <ul class="footer-links">
+          <li>Pazartesi – Cuma · 09:00 – 19:00</li>
+          <li>Cumartesi · 09:00 – 15:30</li>
+          <li>Pazar · Kapalı</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Sayfalar</h4>
+        <ul class="footer-links">
+          <li><a href="#anasayfa">Ana Sayfa</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#tedaviler">Tedaviler</a></li>
+          <li><a href="#hekimlerimiz">Hekimlerimiz</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Doç. Dr. Fatih Karaaslan Ağız ve Diş Sağlığı Polikliniği</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/doc.dr.fatihkaraaslan" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7a9.2 9.2 0 0 0 3.5 3.1c.5.2.9.3 1.2.4.5.2 1 .1 1.3.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     MOBİL YAPIŞKAN RANDEVU ÇUBUĞU
+============================================================ -->
+<div class="mobile-bar" role="navigation" aria-label="Hızlı iletişim">
+  <a href="tel:+905053543464" class="bar-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z"/></svg>
+    Hemen Ara
+  </a>
+  <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="bar-wa">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7a9.2 9.2 0 0 0 3.5 3.1c.5.2.9.3 1.2.4.5.2 1 .1 1.3.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<!-- ============================================================
+     TEDAVİ DETAY PENCERESİ
+============================================================ -->
+<div class="modal-overlay" id="treat-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Pencereyi kapat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+    <span class="section-label">Tedavi</span>
+    <h3 id="modal-title"></h3>
+    <div id="modal-body"></div>
+    <div class="modal-note">
+      Bu içerik genel bilgilendirme amaçlıdır. Size uygun tedavi planı, muayene sonrasında kişiye özel olarak belirlenir.
+    </div>
+    <div class="modal-actions">
+      <a href="https://wa.me/905053543464?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7a9.2 9.2 0 0 0 3.5 3.1c.5.2.9.3 1.2.4.5.2 1 .1 1.3.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+        Randevu Al
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* 1. Navbar scroll durumu */
+const header = document.getElementById('header');
+const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* 2. Mobil menü */
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+});
+mobileMenu.querySelectorAll('a').forEach(a =>
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  })
+);
+
+/* 3. Scroll-reveal */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* 4. Hekimler carousel */
+const carousel = document.getElementById('carousel');
+const prevBtn = document.getElementById('car-prev');
+const nextBtn = document.getElementById('car-next');
+
+let isDown = false, startX = 0, startScroll = 0, moved = false;
+
+carousel.addEventListener('pointerdown', e => {
+  if (e.pointerType === 'touch') return;
+  isDown = true; moved = false;
+  startX = e.clientX; startScroll = carousel.scrollLeft;
+  carousel.classList.add('dragging');
+  carousel.setPointerCapture(e.pointerId);
+});
+carousel.addEventListener('pointermove', e => {
+  if (!isDown) return;
+  const dx = e.clientX - startX;
+  if (Math.abs(dx) > 4) moved = true;
+  carousel.scrollLeft = startScroll - dx;
+});
+const endDrag = () => { if (!isDown) return; isDown = false; carousel.classList.remove('dragging'); };
+carousel.addEventListener('pointerup', endDrag);
+carousel.addEventListener('pointercancel', endDrag);
+carousel.addEventListener('click', e => { if (moved) e.preventDefault(); }, true);
+
+const cardStep = () => {
+  const card = carousel.querySelector('.doc-card');
+  return card ? card.offsetWidth + 24 : 340;
+};
+prevBtn.addEventListener('click', () => carousel.scrollBy({left: -cardStep(), behavior:'smooth'}));
+nextBtn.addEventListener('click', () => carousel.scrollBy({left: cardStep(), behavior:'smooth'}));
+
+const updateArrows = () => {
+  prevBtn.disabled = carousel.scrollLeft <= 4;
+  nextBtn.disabled = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 4;
+};
+carousel.addEventListener('scroll', updateArrows, {passive:true});
+window.addEventListener('resize', updateArrows);
+updateArrows();
+
+/* 5. Hero video — dosya yoksa sessizce gizle */
+const heroVideo = document.getElementById('hero-video');
+if (heroVideo) {
+  heroVideo.addEventListener('error', () => heroVideo.remove(), true);
+  const src = heroVideo.querySelector('source');
+  if (src) src.addEventListener('error', () => heroVideo.remove());
+}
+
+/* ============================================================
+   6. TEDAVİ DETAY PENCERESİ
+============================================================ */
+const treatContent = {
+  'periodontoloji': {
+    title: 'Periodontoloji',
+    body: `<p>Periodontoloji, diş etleri ve dişleri çevreleyen destek dokuların (kemik, bağ doku) sağlığıyla ilgilenen diş hekimliği uzmanlık dalıdır.</p>
+           <p>Diş eti hastalıkları çoğu zaman sinsi ilerler; kanama, kızarıklık, kötü nefes veya diş eti çekilmesi gibi belirtiler erken uyarı işaretleridir. Erken tanı, sağlıklı dokuların korunmasında en önemli etkendir.</p>
+           <p>Uzman bir değerlendirmeyle diş eti sağlığınız detaylıca incelenir ve ihtiyacınıza uygun bir tedavi planı hazırlanır.</p>`
+  },
+  'dis-eti': {
+    title: 'Diş Eti Tedavileri',
+    body: `<p>Diş eti sağlığı, genel ağız sağlığının temelidir. Sağlıklı diş etleri pembe, sıkı ve dişleri sıkıca saran yapıdadır.</p>
+           <p>Diş etinde kanama, şişlik, hassasiyet veya geri çekilme fark ediyorsanız bu durum bir uzman değerlendirmesi gerektirebilir. Tedavi süreci, diş etinin mevcut durumuna göre kişiye özel planlanır.</p>
+           <p>Tedavi sonrasında sağlıklı sonucun korunması, doğru ağız bakımı ve düzenli kontrollerle desteklenir.</p>`
+  },
+  'implant': {
+    title: 'Diş İmplantları',
+    body: `<p>Diş implantı, eksik dişlerin yerine konan ve çene kemiğiyle bütünleşen kök benzeri yapılardır. Eksik dişin fonksiyonunu ve estetiğini tamamlamayı hedefler.</p>
+           <p>İmplant tedavisi, kişinin ağız yapısı, kemik durumu ve genel ihtiyaçlarına göre detaylı bir değerlendirme ile planlanır. Her hasta için süreç ve uygulama farklılık gösterebilir.</p>
+           <p>Uygun aday olduğunuzun belirlenmesi için öncelikle detaylı bir muayene gerekir.</p>`
+  },
+  'estetik': {
+    title: 'Estetik Diş Hekimliği',
+    body: `<p>Estetik diş hekimliği, gülüşünüzün doğallığını koruyarak dişlerinizin görünümünü iyileştirmeyi hedefleyen yaklaşımların bütünüdür.</p>
+           <p>Her gülüş kendine özgüdür; bu nedenle estetik planlama, yüz hatlarınız, diş yapınız ve beklentileriniz birlikte değerlendirilerek yapılır.</p>
+           <p>Amacı yalnızca güzel görünmek değil, sağlıklı ve dengeli bir ağız yapısıyla uyumlu bir sonuç elde etmektir.</p>`
+  },
+  'beyazlatma': {
+    title: 'Diş Beyazlatma',
+    body: `<p>Diş beyazlatma, dişlerin doğal rengini açmaya yönelik klinik uygulamalardır. Zamanla oluşan renklenmeler ve yüzey lekeleri bu tedaviyle hedeflenebilir.</p>
+           <p>Beyazlatma her hasta için uygun olmayabilir; dişlerinizin ve diş etlerinizin mevcut sağlığı öncelikle değerlendirilmelidir.</p>
+           <p>Klinik değerlendirme sonrasında size en uygun yaklaşım önerilir ve bekleyebileceğiniz sonuç hakkında açıkça bilgilendirilirsiniz.</p>`
+  },
+  'cerrahi': {
+    title: 'Ağız ve Diş Cerrahisi',
+    body: `<p>Ağız ve diş cerrahisi, ağız ve diş sağlığı alanındaki cerrahi tedavi yaklaşımlarını kapsayan bir branştır.</p>
+           <p>Cerrahi gerektiren durumlar kişiden kişiye değişir; bu nedenle her tedavi öncesinde detaylı bir değerlendirme yapılır ve planlanan işlem size adım adım anlatılır.</p>
+           <p>Tedavi sonrası süreç ve dikkat edilmesi gerekenler de tedavinin önemli bir parçasıdır; hastalarımıza bu konuda net yönlendirme sağlanır.</p>`
+  },
+  'koruyucu': {
+    title: 'Koruyucu Diş Hekimliği',
+    body: `<p>Koruyucu diş hekimliğinin amacı, sorunlar ortaya çıkmadan önce önlem almaktır. Düzenli kontroller ve zamanında yapılan küçük müdahaleler, ileride daha büyük tedavilere ihtiyaç duymayı azaltabilir.</p>
+           <p>Yılda en az bir kez yapılan kontrol, ağız sağlığının izlenmesi ve risklerin erken fark edilmesi açısından önemlidir.</p>
+           <p>Kontrol randevularında ağız sağlığınız değerlendirilir, kişisel bakım önerileri paylaşılır.</p>`
+  },
+  'diger': {
+    title: 'Diğer Diş Tedavileri',
+    body: `<p>Ağız ve diş sağlığı ihtiyaçları her hastada farklıdır. Yukarıdaki başlıklara girmeyen şikayet ve ihtiyaçlarınız için de klinikte detaylı değerlendirme yapılır.</p>
+           <p>İlk randevunuzda durumunuz incelenir ve size en uygun tedavi seçenekleri açıkça anlatılır.</p>
+           <p>Hangi konuda yardıma ihtiyacınız olduğundan emin değilseniz, randevu sırasında yapılan değerlendirme doğru yönlendirme sağlar.</p>`
+  }
+};
+
+const modal = document.getElementById('treat-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalBody = document.getElementById('modal-body');
+const modalClose = document.getElementById('modal-close');
+
+function openModal(key){
+  const data = treatContent[key];
+  if(!data) return;
+  modalTitle.textContent = data.title;
+  modalBody.innerHTML = data.body;
+  modal.classList.add('open');
+  document.body.classList.add('modal-open');
+  modalClose.focus();
+}
+function closeModal(){
+  modal.classList.remove('open');
+  document.body.classList.remove('modal-open');
+}
+document.querySelectorAll('.treat-card').forEach(card => {
+  card.addEventListener('click', () => openModal(card.dataset.treatment));
+});
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+
+/* ============================================================
+   7. SSS AKORDEON
+============================================================ */
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(other => {
+      other.classList.remove('open');
+      other.querySelector('.faq-a').style.maxHeight = null;
+      other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+      q.setAttribute('aria-expanded','true');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
